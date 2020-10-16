@@ -6,7 +6,7 @@ function Form({ setState }) {
 
     const handleSubmit = (e) => {
         setState(state_local)
-        setStateLocal("")
+        setStateLocal(state_local)
         e.preventDefault();
     }
 
@@ -18,7 +18,7 @@ function Form({ setState }) {
         <div>
             <form onSubmit={handleSubmit}>
                 <input type="text" onChange={handleChange} className="todo-input"
-                    value={state_local} placeholder="Insert URL" />
+                    value={state_local} placeholder="Paste Image URL" />
                 <button className="todo-button" type="submit">
                     <i className="fas fa-plus-square"></i>
                 </button>
