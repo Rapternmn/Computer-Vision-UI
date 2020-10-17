@@ -43,8 +43,6 @@ class Detector():
 		pred = non_max_suppression(pred, 0.3, 0.6)
 
 		dict_bbox = {}
-		# for name in self.detector_classes:
-		# 	dict_bbox[name] = []
 
 		# Process detections
 		for i, det in enumerate(pred):  # detections per image
@@ -55,6 +53,11 @@ class Detector():
 				for det_loc in det:
 					conf = det_loc[4]
 					cls_loc = det_loc[5]
-					dict_bbox[self.detector_classes[int(cls_loc)]] = list(map(int,det_loc[:4]))
+					class_name = self.detector_classes[int(cls_loc)]
+
+					if dict_bbox.get(class_name, 0):
+						dict_bbox[class_name].append(list(map(int, det_loc[:4])))
+					else:
+						dict_bbox[class_name] = [list(map(int, det_loc[:4]))]
 
 		return dict_bbox
