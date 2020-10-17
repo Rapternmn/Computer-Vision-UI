@@ -1,3 +1,5 @@
 node_modules
 trash
 package-lock.json
+__pycache__
+weights

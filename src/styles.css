@@ -1,0 +1,18 @@
+.Header {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+  margin-bottom: 2em;
+  /* background-color: rgb(192, 45, 26); */
+  background-color: rgb(109, 58, 52);
+  color: #fff;
+}
+
+.View {
+    place-items: center;
+    display: flex;
+    height: 60vh;
+    width: 70vw;
+}

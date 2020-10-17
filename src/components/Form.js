@@ -1,12 +1,17 @@
 import React from 'react'
 
-function Form({ setState }) {
+function Form({ setState, img_url }) {
 
     const [state_local, setStateLocal] = React.useState("")
 
     const handleSubmit = (e) => {
+        // Set Image URL
         setState(state_local)
-        setStateLocal(state_local)
+
+        // Clear Form Value
+        setStateLocal("")
+
+        // Prevent Refresh
         e.preventDefault();
     }
 
@@ -17,8 +22,10 @@ function Form({ setState }) {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <input type="text" onChange={handleChange} className="todo-input"
-                    value={state_local} placeholder="Paste Image URL" />
+                <input type="text" onChange={handleChange} 
+                    className="todo-input"
+                    value={state_local}
+                    placeholder="Paste Image URL" />
                 <button className="todo-button" type="submit">
                     <i className="fas fa-plus-square"></i>
                 </button>
